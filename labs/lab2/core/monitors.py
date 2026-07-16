@@ -1,6 +1,7 @@
-import numpy as np
 from dataclasses import dataclass
-from grid import Grid
+import numpy as np
+
+from core.grid import Grid
 
 
 @dataclass

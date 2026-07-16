@@ -1,12 +1,13 @@
-import numpy as np
 from dataclasses import dataclass
 from typing import List, Optional
+import numpy as np
 
-from grid import Grid, GridConfig, update_E, update_H
-from materials import Layer, apply_layers
-from monitors import DFTMonitor
-from pml import PMLConfig, apply_pml
-from sources import Waveform, Source, SourceMode
+from core.grid import Grid, GridConfig, update_E, update_H
+from core.materials import Layer, apply_layers
+from core.monitors import DFTMonitor
+from core.pml import PMLConfig, apply_pml
+from core.sources import Source, SourceMode, Waveform
+from models.results import RTResult
 
 
 @dataclass
@@ -20,22 +21,18 @@ class SimulationConfig:
     pml_order: int = 3
     pml_delta: float = 1e-6
 
-@dataclass
-class RTResult:
-    freqs: np.ndarray
-    wavelengths: np.ndarray
-    R: np.ndarray
-    T: np.ndarray
 
 class Simulation:
     def __init__(self, cfg: SimulationConfig):
         self.cfg = cfg
+
         gc = GridConfig(
             num_cells=cfg.num_cells,
             dx=cfg.dx,
             courant=cfg.courant,
             c_speed=cfg.c_speed
         )
+
         self.grid = Grid(gc)
         self.layers: List[Layer] = []
         self.source: Optional[Source] = None
@@ -68,8 +65,8 @@ class Simulation:
             order=self.cfg.pml_order,
             delta=self.cfg.pml_delta
         )
-        apply_pml(self.grid, pml_cfg)
 
+        apply_pml(self.grid, pml_cfg)
 
     def run(self, snapshot_interval: int = 0, callback=None):
         for n in range(self.cfg.num_steps):
@@ -86,7 +83,6 @@ class Simulation:
             if callback is not None and snapshot_interval > 0 and (n % snapshot_interval == 0):
                 callback(n, self.grid)
 
-
     def run_normalization(self) -> List[DFTMonitor]:
         gc = GridConfig(
             num_cells=self.cfg.num_cells,
@@ -94,6 +90,7 @@ class Simulation:
             courant=self.cfg.courant,
             c_speed=self.cfg.c_speed
         )
+
         norm_grid = Grid(gc)
 
         pml_cfg = PMLConfig(
@@ -101,6 +98,7 @@ class Simulation:
             order=self.cfg.pml_order,
             delta=self.cfg.pml_delta
         )
+
         apply_pml(norm_grid, pml_cfg)
 
         norm_monitors = [
@@ -149,11 +147,13 @@ class Simulation:
 
         for k in range(nf):
             Einc2 = np.abs(Einc_ref[k]) ** 2
+
             if Einc2 > threshold:
                 Eref = Etotal_ref[k] - Einc_ref[k]
                 R[k] = np.abs(Eref) ** 2 / Einc2
 
                 Einc_trans2 = np.abs(Einc_trans[k]) ** 2
+
                 if Einc_trans2 > threshold:
                     T[k] = np.abs(Etotal_trans[k]) ** 2 / Einc_trans2
                 else:
@@ -163,4 +163,10 @@ class Simulation:
                 T[k] = 0.0
 
         wavelengths = self.cfg.c_speed / freqs
-        return RTResult(freqs=freqs, wavelengths=wavelengths, R=R, T=T)
+
+        return RTResult(
+            freqs=freqs,
+            wavelengths=wavelengths,
+            R=R,
+            T=T,
+        )

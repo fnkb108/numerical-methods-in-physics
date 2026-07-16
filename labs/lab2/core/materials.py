@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import List
-from grid import Grid
+
+from core.grid import Grid
 
 
 @dataclass

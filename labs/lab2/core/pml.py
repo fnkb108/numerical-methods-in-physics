@@ -1,6 +1,6 @@
-import numpy as np
 from dataclasses import dataclass
-from grid import Grid
+import numpy as np
+from core.grid import Grid
 
 
 @dataclass
@@ -25,6 +25,7 @@ def apply_pml(grid: Grid, pml: PMLConfig):
     def grading(d: float) -> float:
         if d <= 0.0:
             return 0.0
+
         return sigma_max * (d / L) ** m
 
     nE = grid.nE
@@ -42,6 +43,7 @@ def apply_pml(grid: Grid, pml: PMLConfig):
         grid.sigma_m[i] = sig * grid.mu[i] / eps_local
 
     right_start_E = nE - N
+
     for i in range(right_start_E, nE):
         d = (i - right_start_E) * dx
         sig = grading(d)
@@ -55,6 +57,7 @@ def apply_pml(grid: Grid, pml: PMLConfig):
         d = (i + 0.5 - (nE - N)) * dx
         if d < 0.0:
             d = 0.0
+
         sig = grading(d)
         eps_local = grid.eps[min(i, nE - 1)]
         grid.sigma_m[i] = sig * grid.mu[i] / eps_local
