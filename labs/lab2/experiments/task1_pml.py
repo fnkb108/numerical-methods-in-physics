@@ -226,7 +226,7 @@ def task1():
     plt.tight_layout()
     plt.show()
 
-    widths = [5, 10, 15, 20, 25, 30, 40, 50, 60]
+    widths = [5, 10, 15, 20, 25, 30, 40, 50, 60, 70]
     rmax_curves = {ord_: [] for ord_ in orders}
 
     for ord_ in orders:
