@@ -1,3 +1,4 @@
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -89,5 +90,5 @@ ax.set_xlabel('r')
 ax.set_ylabel('z')
 ax.set_title(f'T(r, z), θ={theta}, q={q}')
 plt.tight_layout()
-plt.savefig('lab1.png', dpi=150)
+plt.savefig('../lab1.png', dpi=150)
 plt.show()
