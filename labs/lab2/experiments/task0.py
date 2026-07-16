@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 from core.sources import SourceMode, make_cw, make_gaussian_pulse
 from experiments.common import run_and_collect
-from vizual.plotting import plot_snapshots
+from visual.plotting import plot_snapshots
 
 
 def task0():
