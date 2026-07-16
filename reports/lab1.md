@@ -42,7 +42,9 @@ FVM results (сетка $20 \times 40$, решается методом верх
 
 Для обеспечения наивысшей скорости нахождения решения в дальнейшем, проведем исследования на наилучший параметр $\omega_{opt}$ (для исследования использовалась сетка $10\times 20$): 
 <p align="center"> <img src="images/lab1/FDM_relaxation_research.png" width="600"> </p>
-Итоговый результат: $\omega_{opt}=1.7 \text{ при } n = 77 $
+
+
+$\text{Итоговый результат: } \omega_\text{opt}=1.7 \text{ при } n = 77.$
 
 Для FVM аналогично
 <p align="center"> <img src="images/lab1/FVM_relaxation_research.png" width="600"> </p>
