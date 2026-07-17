@@ -31,7 +31,7 @@ numerical-methods-in-physics/
 └── README.md
 ```
 
-### Expected organization
+### Organization
 
 - `labs/` — source code and materials for each lab.
 - `reports/` — reports in Markdown format.
