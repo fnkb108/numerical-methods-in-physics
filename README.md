@@ -52,8 +52,8 @@ Introduction to computational fluid dynamics through the stationary advection-di
 This lab uses the finite-volume method on a rectangular grid and studies upwind and TVD discretization schemes, boundary conditions on inlet and outlet boundaries, and the influence of diffusion on the scalar field.
 
 ### Lab 4
-Steady viscous incompressible flow in a channel.  
-This lab focuses on a finite-volume formulation in primitive variables, pressure-velocity coupling, comparison of inlet boundary conditions, analysis of velocity and pressure distributions, and the effect of Reynolds number on the numerical solution.
+Introduction to computational fluid dynamics through steady viscous incompressible flow.  
+This lab considers channel-flow simulation with pressure-velocity coupling, construction of velocity and pressure fields, analysis of inlet and outlet boundary conditions, and investigation of Reynolds-number effects.
 
 ## Reports
 
