@@ -43,26 +43,25 @@ numerical-methods-in-physics/
 Finite-difference solution of the stationary heat-conduction problem in a cylindrical domain.  
 This lab focuses on the formulation, nondimensionalization, grid construction, and derivation of second-order finite-difference equations for the temperature field with mixed boundary conditions.
 
+[Lab 1 report](./reports/lab1.md)
+
 ### Lab 2
 Introduction to computational electrodynamics using the 1D FDTD method.  
 The lab includes free-space wave propagation, comparison of source implementations, reflection from PML boundaries, reflection from a dielectric interface, transmission through a dielectric slab, and spectral analysis of photonic crystals and Bragg microcavities.
+
+[Lab 2 report](./reports/lab2.md)
 
 ### Lab 3
 Introduction to computational fluid dynamics through the stationary advection-diffusion equation.  
 This lab uses the finite-volume method on a rectangular grid and studies upwind and TVD discretization schemes, boundary conditions on inlet and outlet boundaries, and the influence of diffusion on the scalar field.
 
+[Lab 3 report](./reports/lab3.md)
+
 ### Lab 4
 Introduction to computational fluid dynamics through steady viscous incompressible flow.  
 This lab considers channel-flow simulation with pressure-velocity coupling, construction of velocity and pressure fields, analysis of inlet and outlet boundary conditions, and investigation of Reynolds-number effects.
 
-## Reports
-
-Below is a convenient section for linking reports as they are added to the repository.
-
-- [Lab 1 report](./reports/lab1.md)
-- [Lab 2 report](./reports/lab2.md)
-- [Lab 3 report](./reports/lab3.md)
-- [Lab 4 report](./reports/lab4.md)
+[Lab 4 report](./reports/lab4.md)
 
 ## How to use
 
