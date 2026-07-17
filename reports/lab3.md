@@ -6,7 +6,7 @@
 
 Решается уравнение адвекции-диффузии:
 
-$$ \mathop{\text{div}}(\rho\,\mathbf{v}\,\varphi) = \mathop{\text{div}}(\Gamma \nabla \varphi) + S $$
+$$ \mathop{\text{div}}(\rho v \varphi) = \mathop{\text{div}}(\Gamma \nabla \varphi) + S $$
 
 далее реализуется метод конечных объемов на прямоугольной (квадратной) сетке.
 
