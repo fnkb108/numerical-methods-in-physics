@@ -32,19 +32,19 @@ $$ \hat T = \theta = \frac{T_{2} - T_{1}}{T_{1}} \text{ при } \hat z = \frac{
 Итого решаем данную задачу двумя методами (при $\frac{l}{a}=2$, $q=1$, $\theta=1$).
 
 FDM results (сетка $100\times200$, решается через np.linalg.solve())
-<p align="center"> <img src="images/lab1/FDM_result_linalg.png" width=400"> </p>
+<p align="center"> <img src="figures/lab1/FDM_result_linalg.png" width=400"> </p>
 
 FVM results (сетка $20 \times 40$, решается методом верхней релаксации)
-<p align="center"> <img src="images/lab1/FVM_result_relaxation.png" width="400"> </p>
+<p align="center"> <img src="figures/lab1/FVM_result_relaxation.png" width="400"> </p>
 
 Обе задачи, решенные через np.linalg.solve()) с сеткой $100\times200$
-<p align="center"> <img src="images/lab1/FDM_FVM.png" width="600"> </p>
+<p align="center"> <img src="figures/lab1/FDM_FVM.png" width="600"> </p>
 
 Для обеспечения наивысшей скорости нахождения решения в дальнейшем, проведем исследования на наилучший параметр $\omega_{opt}$ (для исследования использовалась сетка $10\times 20$): 
-<p align="center"> <img src="images/lab1/FDM_relaxation_research.png" width="600"> </p>
+<p align="center"> <img src="figures/lab1/FDM_relaxation_research.png" width="600"> </p>
 
 
 $\text{Итоговый результат: } \omega_\text{opt}=1.7 \text{ при } n = 77.$
 
 Для FVM аналогично
-<p align="center"> <img src="images/lab1/FVM_relaxation_research.png" width="600"> </p>
+<p align="center"> <img src="figures/lab1/FVM_relaxation_research.png" width="600"> </p>
