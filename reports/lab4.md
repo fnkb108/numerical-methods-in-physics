@@ -15,16 +15,16 @@ $$Re=\frac{\upsilon_{ср}2h}{\nu}$$
 #### Задача 1.
 Был реализован метод конечных объемов на прямоугольной сетке со смещенными скоростями и давлениями. Для примера была решена задача на прямоугольной стеке $(40\times20)$ при малом числе Рейнольдса $Re≈33$.
 
-<p align="center"> <img src="figures/lab4/task1_result.png" width="600"> </p>
+<p align="center"> <img src="figures/lab4/task1_result.png" width="1200"> </p>
 
 При изменении расстояния до outlet l, получаем следующую картину
 
-<p align="center"> <img src="figures/lab4/task1_outlet.png" width="600"> </p>
+<p align="center"> <img src="figures/lab4/task1_outlet.png" width="1200"> </p>
 
 То есть при уменьшении длины l решение становится ближе к теории.
 
 При увеличении Re получаем следующую зависимость:
 
-<p align="center"> <img src="figures/lab4/task1_re.png" width="600"> </p>
+<p align="center"> <img src="figures/lab4/task1_re.png" width="1200"> </p>
 
 Видно, что y⁺ растёт с Re, но во всех проведённых расчётах остаётся значительно ниже критического 11.63; при этом ошибка $u_{max}$ у выхода даже уменьшается с ростом Re. Если y⁺>11.63 - поток станет турбулентным и придется по другому учитывать стеночные функции.
