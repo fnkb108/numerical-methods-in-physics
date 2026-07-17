@@ -1,6 +1,6 @@
 # Введение в вычислительную электродинамику. Метод FDTD
 Для моделирования FDTD (finite-difference time-domain) метода использовался алгоритм на сетке Yee, в котором электрическое поле задается в точках $(x_i,t_{n+1/2})$,  магнитное поле задается в точках $(x_{i+1/2},t_n)$, то есть сетка имеет вид:
-<p align="center"> <img src="images/lab2/theory/yee_grid.png" width="600"> </p>
+<p align="center"> <img src="figures/lab2/theory/yee_grid.png" width="600"> </p>
 
 Пропустив вывод алгоритма Yee, перейдем к его итоговым выражениям:
 
@@ -27,10 +27,10 @@ $$g(t)=\theta(t-t_{start})-\theta(t-t_{finish})$$
 Возбуждение вводится через плотность тока $J$.
 
 Рассмотрим получившиеся графики:
-<p align="center"> <img src="images/lab2/task0/gauss_soft.png" width="600"> </p>
-<p align="center"> <img src="images/lab2/task0/cw_soft.png" width="600"> </p>
-<p align="center"> <img src="images/lab2/task0/gauss_current.png" width="600"> </p>
-<p align="center"> <img src="images/lab2/task0/cw_current.png" width="600"> </p>
-<p align="center"> <img src="images/lab2/task0/gauss_cw.png" width="600"> </p>
+<p align="center"> <img src="figures/lab2/task0/gauss_soft.png" width="600"> </p>
+<p align="center"> <img src="figures/lab2/task0/cw_soft.png" width="600"> </p>
+<p align="center"> <img src="figures/lab2/task0/gauss_current.png" width="600"> </p>
+<p align="center"> <img src="figures/lab2/task0/cw_current.png" width="600"> </p>
+<p align="center"> <img src="figures/lab2/task0/gauss_cw.png" width="600"> </p>
 Источники отличаются. Мягкий источник просто добавляет своё поле к уже существующему $E_y$​, поэтому рядом с источником видно «наслоение»: падающая волна и отражённая волна складываются с полем источника, амплитуда получается больше, форма немного искажена. Токовый источник, вводимый через плотность тока $J$, действует как физически более корректное возбуждение: он запускает волну, но не навязывает жёсткое значение поля в узле. В результате поле около источника менее искажено.
 
